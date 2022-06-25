@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import kk.diveder.DividerHeight
 import kk.diveder.DividerHeightBackground
 import kk.jetpackcompose.ui.theme.JetPackComposeTheme
+import kk.row.RowView
 import kk.spacer.SpacerHeight
 import kk.text.*
 
@@ -32,11 +33,16 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android  ")
+                    GreetingRow()
                 }
             }
         }
     }
+}
+
+@Composable
+fun GreetingRow() {
+    RowView()
 }
 
 @Composable
@@ -67,6 +73,6 @@ uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 fun DefaultPreview() {
     JetPackComposeTheme {
-        Greeting("Android os")
+        GreetingRow()
     }
 }

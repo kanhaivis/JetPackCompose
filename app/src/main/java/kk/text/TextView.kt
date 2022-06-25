@@ -3,7 +3,9 @@ package kk.text
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -129,4 +131,17 @@ fun TextViewsClick(name: String)  {
             .fillMaxWidth()
 
     )
+}
+
+@Composable
+fun MyRowText(name: String) {
+    Text(text = name,
+        fontSize = 16.sp,
+        modifier = Modifier
+            .width(100.dp)
+            .height(50.dp)
+            .padding(10.dp)
+            .background(color = Color.Magenta)
+            .padding(5.dp))
+
 }
