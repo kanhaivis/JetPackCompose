@@ -3,13 +3,18 @@ package kk.jetpackcompose
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import kk.jetpackcompose.scaffold.HomeScaffold
+import kk.jetpackcompose.scaffold.MySectionScaffold
 import kk.jetpackcompose.ui.theme.JetPackComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,13 +22,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             JetPackComposeTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android od")
-                }
+                MySectionScaffold()
+                
             }
         }
     }
@@ -38,6 +38,12 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     JetPackComposeTheme {
-        Greeting("Android")
+        MySectionScaffold()
+        Column(
+            modifier = Modifier.padding(top = 55.dp)
+        ) {
+            Text(text = "Kumat")
+        }
+
     }
 }
